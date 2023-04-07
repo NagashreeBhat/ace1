@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+.list-inline>li {
+  background-color: purple;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  color: white;
+  font-size: 26px;
+}
+    </style>
+  </head>
+    <body>
+      <script>
+        // Global Variables
+var grd = $('#grid');
+var imgs = grd.children();
+
+// Page Refresh to run script below
+imgs.sort(function(){
+  return (Math.round(Math.random()) - 0.5);
+});
+grd.remove('li');
+for(var i=0; i < imgs.length; i++)grd.append(imgs[i]);
+
+//Click Functions to run the same script on top
+$('a.btn-default').click(function(){
+
+  imgs.sort(function(){
+    return (Math.round(Math.random()) - 0.5);
+  });
+  grd.remove('li');
+  for(var i=0; i < imgs.length; i++)grd.append(imgs[i]);
+ });
+      </script>
+        <div class="container">
+          <h3>ACE daily standup random order</h3>
+          <ul id="grid" class="list-inline">
+            <li>Neeraj</li>
+            <li>Julio</li>
+            <li>Nagashree</li>
+            <li>Luis</li>
+            <li>Prasanthi</li>
+            <li>Irma</li>
+            <li>Tom S</li>
+          </ul>
+          <a href="#" class="btn btn-default">Generate order randomly</a>
+        </div>
+        </body>
+
+        </html>
